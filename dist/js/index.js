@@ -1,1 +1,1 @@
-console.log("JavaScript Connected, I love food");
+console.log("JavaScript Connected, I love Musty!");
