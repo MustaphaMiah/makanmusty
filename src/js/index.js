@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
             return videos;
         })
         .then((videos) => {
-            videos.forEach((currentVideo) => {
+            videos.forEach((currentVideos) => {
                 const videoLi = parser.parseFromString(
-                    `<li id=${currentVideo.snippet.title}><p>${currentVideo.snippet.title}</p>
-                                    <p>Level: ${currentVideo.snippet.description}</p>
-                                    <div class="img-container" ><div><img alt="image missing" src=${currentVideo.snippet.thumbnails.default.url} />
+                    `<li id=${currentVideo.snippet.title}><p>${currentVideos.snippet.title}</p>
+                                    <p>Level: ${currentVideos.snippet.description}</p>
+                                    <div class="img-container" ><div><img alt="image missing" src=${currentVideos.snippet.thumbnails.default.url} />
                                     </div></div></li>`,
                     "text/html"
                 );
