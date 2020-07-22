@@ -8,34 +8,26 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch(
             `${apiURL}/search?part=snippet&channelId=${makanMustyId}&maxResults=20&key=${youtubeApiKey}`
         )
+        // `${apiURL}/search?part=snippet&channelId=${makanMustyId}&maxResults=20&key=${youtubeApiKey}`
         .then((response) => {
             return response.json();
         })
         .then((responseJSON) => {
-            const videos = [...responseJSON.items];
-            console.log("videos", videos);
+            const videos = [...responseJSON.items.splice(2)];
+            console.log("my videos", videos);
             return videos;
         })
         .then((videos) => {
             videos.forEach((currentVideos) => {
+                console.log("current videos dude", currentVideos);
                 const videoLi = parser.parseFromString(
-                    `<li id=${currentVideo.snippet.title}><p>${currentVideos.snippet.title}</p>
-                                    <p>Level: ${currentVideos.snippet.description}</p>
+                    `<li id=${currentVideos.snippet.title}><p>${currentVideos.snippet.title}</p>
+                                    <p>${currentVideos.snippet.description}</p>
                                     <div class="img-container" ><div><img alt="image missing" src=${currentVideos.snippet.thumbnails.default.url} />
                                     </div></div></li>`,
                     "text/html"
                 );
+                videoList.appendChild(videoLi.body.firstChild);
             });
-            videoList.appendChild(videoLi.body.firstChild);
         });
 });
-
-// .then((digimon) => {
-//     digimon.forEach((currentDigimon) => {Î
-//       const digimonLi = parser.parseFromString(
-//         //. dot notation is happeningggg. parseFromString turns text into HTML
-//         `<li id=${currentDigimon.name}><p>${currentDigimon.name}</p><p>Level: ${currentDigimon.level}</p><div class="img-container" ><div><img alt="image missing" src=${currentDigimon.img} /></div></div></li>`,
-//         "text/html"
-//       );
-//       digimonList.appendChild(digimonLi.body.firstChild);
-//     });
