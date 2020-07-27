@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 const videoLi = parser.parseFromString(
                     `<li id=${currentVideos.snippet.title}><p>${currentVideos.snippet.title}</p>
                                     <p>${currentVideos.snippet.description}</p>
-                                    <div class="img-container" ><div><img alt="image missing" src=${currentVideos.snippet.thumbnails.default.url} />
-                                    </div></div></li>`,
+                                    <div class="img-container" ><div><a href="https://youtu.be/${currentVideos.id.videoId}" class="vid-link"><img alt="image missing" src=${currentVideos.snippet.thumbnails.default.url} />
+                                    <a/></div></div></li>`,
                     "text/html"
                 );
                 videoList.appendChild(videoLi.body.firstChild);
