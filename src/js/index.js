@@ -8,18 +8,17 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch(
             `${apiURL}/search?part=snippet&channelId=${makanMustyId}&maxResults=20&key=${youtubeApiKey}`
         )
-        // `${apiURL}/search?part=snippet&channelId=${makanMustyId}&maxResults=20&key=${youtubeApiKey}`
         .then((response) => {
             return response.json();
         })
         .then((responseJSON) => {
             const videos = [...responseJSON.items.splice(2)];
-            console.log("my videos", videos);
+            console.log("videos", videos);
             return videos;
         })
         .then((videos) => {
             videos.forEach((currentVideos) => {
-                console.log("current videos dude", currentVideos);
+                console.log("current videos", currentVideos);
                 const videoLi = parser.parseFromString(
                     `<li id=${currentVideos.snippet.title}><p>${currentVideos.snippet.title}</p>
                                     <p>${currentVideos.snippet.description}</p>

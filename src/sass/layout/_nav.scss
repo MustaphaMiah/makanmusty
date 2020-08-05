@@ -1,0 +1,25 @@
+nav {
+    li,
+    a,
+    button {
+        font-family: sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: #ecf0f1;
+        text-decoration: none;
+    }
+}
+
+.nav-links {
+    list-style: none;
+    li {
+        display: inline-block;
+        padding: 0px 20px;
+        a {
+            transition: all 0.3s ease 0s;
+        }
+        a:hover {
+            color: #0088a9;
+        }
+    }
+}
