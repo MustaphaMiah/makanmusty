@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch(
             `${apiURL}/search?part=snippet&channelId=${makanMustyId}&maxResults=20&key=${youtubeApiKey}`
         )
-        // `${apiURL}/search?part=snippet&channelId=${makanMustyId}&maxResults=20&key=${youtubeApiKey}`
         .then((response) => {
             return response.json();
         })
