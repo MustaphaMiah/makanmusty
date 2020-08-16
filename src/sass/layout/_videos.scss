@@ -1,5 +1,5 @@
 		.video-container {
-		    padding: 0 10rem;
+		    padding: 0 25rem;
 		}
 		
 		.video-list {
@@ -12,7 +12,8 @@
 		    list-style-type: none;
 		    text-align: center;
 		    li {
-		        width: 18%;
+		        // width: 18%;
+		        flex: auto;
 		        background: $secondary;
 		        border-radius: 15px;
 		        margin-bottom: 1.5rem;
@@ -25,7 +26,7 @@
 		                padding-bottom: 100%;
 		                position: relative;
 		                img {
-		                    object-fit: cover;
+		                    object-fit: contain;
 		                    position: absolute;
 		                    left: 0;
 		                    top: 0;
@@ -39,5 +40,5 @@
 		
 		.latest-videos {
 		    text-decoration: none;
-		    color: peru;
+		    color: white;
 		}
