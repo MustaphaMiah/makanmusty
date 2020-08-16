@@ -40,7 +40,7 @@ body {
   background-color: orange; }
 
 .video-container {
-  padding: 0 10rem; }
+  padding: 0 25rem; }
 
 .video-list {
   background-color: YELLOW;
@@ -51,7 +51,7 @@ body {
   list-style-type: none;
   text-align: center; }
   .video-list li {
-    width: 18%;
+    flex: auto;
     background: #EC6933;
     border-radius: 15px;
     margin-bottom: 1.5rem; }
@@ -63,7 +63,7 @@ body {
         padding-bottom: 100%;
         position: relative; }
         .video-list li .img-container > div img {
-          object-fit: cover;
+          object-fit: contain;
           position: absolute;
           left: 0;
           top: 0;
@@ -72,4 +72,4 @@ body {
 
 .latest-videos {
   text-decoration: none;
-  color: peru; }
+  color: white; }
